@@ -1,6 +1,5 @@
 # series-finale-date
-Obtain the finale date for a series.
-
+Grabs every color from a picture.  
 Author: Aurange
 
 Interactive Version: 
