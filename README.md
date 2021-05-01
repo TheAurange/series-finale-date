@@ -2,4 +2,4 @@
 Obtain the finale date for a series.  
 Author: Aurange
 
-Interactive Version: 
+Interactive Version: https://auragar.github.io/series-finale-date/
