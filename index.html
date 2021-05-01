@@ -3,6 +3,8 @@
 		<title>Series Finale Date</title>
 
 		<link rel="stylesheet" href="main.css" />
+		
+		<script src="code.js"></script>
 
 		<!--Created by Aurange-->
 	</head>
@@ -10,6 +12,13 @@
 	<body>
 		&gt;<a href="https://github.com/auragar/series-finale-date/">Click Here for Code Repository!</a>&lt;
 			<br>
-		Nothing for this moment.
+		<input type="date" id="startDate" onchange="performAction();" />
+		
+		<script>
+			function performAction(){
+				var startDate = document.getElementById("startDate").value;
+				console.log(startDate);
+			}
+		</script>
 	</body>
 </html>
