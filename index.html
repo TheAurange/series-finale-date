@@ -17,7 +17,8 @@
 		<script>
 			function performAction(){
 				var startDate = document.getElementById("startDate").value;
-				console.log(startDate);
+				startDate = startDate.split("-");
+				console.log(startDate[0] + ", " + (parseInt(startDate[1]) - 1) + ", " + startDate[2]);
 			}
 		</script>
 	</body>
