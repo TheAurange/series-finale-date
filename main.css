@@ -7,3 +7,6 @@ a{
 	color: rgba(0, 0, 0, 1.0);
 	text-decoration: none;
 }
+input[type=number]{
+	width: 80px;
+}
