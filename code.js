@@ -21,7 +21,7 @@ function dayOfYearToDateString(dayOfYear){
   var monsToDays = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334];
   var mon;
   for(var i = 0; i < monsToDays.length; i++){
-    if(monsToDays[i] > dayOfYear){
+    if(monsToDays[i] >= dayOfYear){
       mon = i - 1;
       break;
     }
