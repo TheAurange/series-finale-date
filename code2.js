@@ -8,4 +8,5 @@ function performAction(){
     var episodeCount = document.getElementById("input2").value;
     document.getElementById("output").innerText = " ends on " + seriesFinaleDate(startDate.getDayOfYear(), episodeCount) + ".";
   }
+  this.blur();
 }
