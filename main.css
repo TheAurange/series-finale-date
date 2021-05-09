@@ -10,6 +10,6 @@ button{
 	border-radius: 10px;
 	cursor: pointer;
 }
-input[type=number]{
+input[type="number"]{
 	width: 50px;
 }
