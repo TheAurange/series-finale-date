@@ -1,8 +1,10 @@
 //Created by Aurange
 
+"use strict";
+
 function performAction(inputElem){
-  var startDate = document.getElementById("input").value;
-  var episodeCount = document.getElementById("input2").value;
+  let startDate = document.getElementById("input").value;
+  let episodeCount = document.getElementById("input2").value;
   if(startDate.length > 0 && episodeCount.length > 0){
     startDate = startDate.split("-");
     startDate = new Date(startDate[0] + ", " + startDate[1] + ", " + startDate[2]);
