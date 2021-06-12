@@ -14,7 +14,7 @@ function performAction(inputElem){
     else if(Math.round(Math.abs(new Date() - startDate) / 604800000) > 1) remaining = Math.round(Math.abs(new Date() - startDate) / 604800000) + " Episodes Remaining";
     else remaining = "1 Episode Remaining";
 
-    document.getElementById("output").innerText = " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + " (" + remaining + ").";
+    document.getElementById("output").innerText = " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")";
   }
   inputElem.blur();
 }
