@@ -11,7 +11,7 @@ function performAction(inputElem){
     startDate.setDate(startDate.getDate() + ((episodeCount - 1) * 7));
 
     if(Math.round((new Date() - startDate) / 86400000) >= 0) remaining = "Ended";
-    else if(Math.round((new Date() - startDate) / 604800000) > 1) remaining = Math.round((new Date() - startDate) / 604800000) + " Episodes Remaining";
+    else if(Math.round(Math.abs(new Date() - startDate) / 604800000) > 1) remaining = Math.round(Math.abs(new Date() - startDate) / 604800000) + " Episodes Remaining";
     else remaining = "1 Episode Remaining";
 
     document.getElementById("output").innerText = " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + " (" + remaining + ").";
