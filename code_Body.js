@@ -3,7 +3,7 @@
 "use strict";
 
 function performAction(inputElem){
-  let startDate = document.getElementById("input").value, episodeCount = document.getElementById("input2").value, delayCount = document.getElementById("input3").value, remaining;
+  let startDate = document.getElementById("start").value, episodeCount = document.getElementById("count").value, delayCount = document.getElementById("delay").value, remaining;
 
   if(startDate.length > 0 && episodeCount.length > 0 && delayCount.length > 0){
     startDate = startDate.split("-");
