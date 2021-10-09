@@ -17,6 +17,5 @@ function performAction(inputElem){
     document.getElementById("output").innerText = " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")";
   }
 
-  console.log(inputElem);
-  inputElem.blur();
+  if(inputElem !== undefined) inputElem.blur();
 }
