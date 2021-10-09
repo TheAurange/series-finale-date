@@ -10,11 +10,11 @@ function performAction(inputElem){
     startDate = new Date(startDate[0] + ", " + startDate[1] + ", " + startDate[2]);
     startDate.setDate(startDate.getDate() + (((parseInt(episodeCount) - 1) + parseInt(delayCount)) * 7));
 
-    if((new Date() - startDate) / 86400000 >= 0) remaining = "Ended";
+    if((new Date() - startDate) / 86400000 >= 0) remaining = " has ended.";
     else if(Math.abs(new Date() - startDate) / 604800000 > 1) remaining = Math.ceil(Math.abs(new Date() - startDate) / 604800000) + " Episodes Remaining";
     else remaining = "1 Episode Remaining";
 
-    document.getElementById("output").innerText = " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")";
+    document.getElementById("output").innerText = (remaining !== " has ended.") ? " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")" : remaining;
   }
 
   if(inputElem !== undefined) inputElem.blur();
