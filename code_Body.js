@@ -5,7 +5,7 @@
 function performAction(inputElem){
   let startDate = document.getElementById("start").value, episodeCount = document.getElementById("count").value, delayCount = document.getElementById("delay").value, remaining;
 
-  if(delayCount === 1) document.getElementById("pluralizer").innerText = "s";
+  if(delayCount !== 1) document.getElementById("pluralizer").innerText = "s";
   else document.getElementById("pluralizer").innerText = "";
 
   if(startDate.length > 0 && episodeCount.length > 0 && delayCount.length > 0){
