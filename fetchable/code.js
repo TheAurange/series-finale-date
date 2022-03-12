@@ -3,6 +3,8 @@
 "use strict";
 
 window.onload = function(){
+  let startDate, episodeCount, delayCount;
+
   if(location.href.indexOf("?") !== -1){
     location.href.split("?")[1].split("&").forEach(e => {
       e = e.split("=");
@@ -13,25 +15,25 @@ window.onload = function(){
             if(/^\d{4}-\d{2}-\d{2}$/.test(e[1])){
               let t = e[1].split("-");
 
-              if(t[1] > 0 && t[1] < 13 && t[2] > 0 && t[2] < 31) document.getElementById("start").value = e[1];
+              if(t[1] > 0 && t[1] < 13 && t[2] > 0 && t[2] < 31) startDate = e[1];
             }
             break;
           case "count":
-            if(parseInt(e[1]) > 1) document.getElementById("count").value = e[1];
+            if(parseInt(e[1]) > 1) episodeCount = e[1];
             break;
           case "delay":
-            if(!isNaN(e[1])) document.getElementById("delay").value = e[1];
+            if(!isNaN(e[1])) delayCount = e[1];
             break;
         }
       }
     });
 
-    performAction();
+    performAction(startDate, episodeCount, delayCount);
   }
 };
 
-function performAction(inputElem){
-  let startDate = document.getElementById("start").value, episodeCount = document.getElementById("count").value, delayCount = document.getElementById("delay").value, remaining;
+function performAction(startDate, episodeCount, delayCount){
+  let remaining;
 
   if(delayCount !== "1") document.getElementById("pluralizer").innerText = "s";
   else document.getElementById("pluralizer").innerText = "";
@@ -48,6 +50,4 @@ function performAction(inputElem){
 
     document.getElementById("output").innerText = (remaining !== " has ended.") ? " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")" : remaining;
   }
-
-  if(inputElem !== undefined) inputElem.blur();
 }
