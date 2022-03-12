@@ -40,11 +40,11 @@ function performAction(startDate, episodeCount, delayCount){
     startDate = new Date(startDate[0] + ", " + startDate[1] + ", " + startDate[2]);
     startDate.setDate(startDate.getDate() + (((parseInt(episodeCount) - 1) + parseInt(delayCount)) * 7));
 
-    if((new Date() - startDate) / 86400000 >= 0) remaining = " has ended.";
+    if((new Date() - startDate) / 86400000 >= 0) remaining = "Ended.";
     else if(Math.abs(new Date() - startDate) / 604800000 > episodeCount) remaining = episodeCount + " Episodes Remaining";
     else if(Math.abs(new Date() - startDate) / 604800000 > 1) remaining = Math.ceil(Math.abs(new Date() - startDate) / 604800000) + " Episodes Remaining";
     else remaining = "1 Episode Remaining";
 
-    document.getElementById("output").innerText = (remaining !== " has ended.") ? " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")" : remaining;
+    document.getElementById("output").innerText = (remaining !== " has ended.") ? "Ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")" : remaining;
   }
 }
