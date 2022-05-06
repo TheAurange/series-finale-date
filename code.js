@@ -26,6 +26,8 @@ function performAction(inputElem){
 
 window.onload = function(){
   if(location.href.indexOf("?") !== -1){
+    document.getElementById("input").style.display = "none";
+
     location.href.split("?")[1].split("&").forEach(e => {
       e = e.split("=");
 
