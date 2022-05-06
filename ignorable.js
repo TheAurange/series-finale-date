@@ -2,4 +2,5 @@
 
 "use strict";
 
-console.log(window.location, window.parent.location);
+if(window.location !== window.parent.location) console.log("In An iFrame");
+else console.log("Not In An iFrame");
