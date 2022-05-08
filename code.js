@@ -2,7 +2,7 @@
 
 "use strict";
 
-function performAction(inputElem){
+function performAction(inputElem, get){
   let startDate = document.getElementById("start").value, episodeCount = document.getElementById("count").value, delayCount = document.getElementById("delay").value, remaining;
 
   if(delayCount !== "1") document.getElementById("pluralizer").innerText = "s";
@@ -22,6 +22,7 @@ function performAction(inputElem){
   }
 
   if(inputElem !== undefined) inputElem.blur();
+  else if(get) document.getElementById("input").innerText = "This series ";
 }
 
 window.onload = function(){
@@ -49,7 +50,5 @@ window.onload = function(){
     });
 
     performAction();
-
-    document.getElementById("input").innerText = "This series ";
   }
 };
