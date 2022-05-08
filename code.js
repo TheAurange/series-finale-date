@@ -2,7 +2,7 @@
 
 "use strict";
 
-function performAction(inputElem, get){
+function performAction(caller){
   let startDate = document.getElementById("start").value, episodeCount = document.getElementById("count").value, delayCount = document.getElementById("delay").value, remaining;
 
   if(delayCount !== "1") document.getElementById("pluralizer").innerText = "s";
@@ -21,8 +21,8 @@ function performAction(inputElem, get){
     document.getElementById("output").innerText = (remaining !== " has ended.") ? " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")" : remaining;
   }
 
-  if(inputElem !== undefined) inputElem.blur();
-  else if(get) document.getElementById("input").innerText = "This series ";
+  if(caller === "Location") document.getElementById("input").innerText = "This series ";
+  else if(caller !== undefined) caller.blur();
 }
 
 window.onload = function(){
@@ -49,6 +49,6 @@ window.onload = function(){
       }
     });
 
-    performAction(undefined, true);
+    performAction("Location");
   }
 };
