@@ -49,6 +49,6 @@ window.onload = function(){
       }
     });
 
-    performAction();
+    performAction(undefined, true);
   }
 };
