@@ -31,6 +31,8 @@ window.onload = function(){
     location.href.split("?")[1].split("&").forEach(e => {
       e = e.split("=");
 
+      console.log(e);
+
       if(e.length > 1 && e[1].length > 0){
         switch(e[0]){
           case "start":
