@@ -27,11 +27,9 @@ function performAction(caller){
 }
 
 window.onload = function(){
-  if(location.href.indexOf("?") !== -1){
+  if(location.href.indexOf("?") !== -1 && location.href.indexOf("start") !== -1 && location.href.indexOf("count") !== -1){
     location.href.split("?")[1].split("&").forEach(e => {
       e = e.split("=");
-
-      console.log(e);
 
       if(e.length > 1 && e[1].length > 0){
         switch(e[0]){
@@ -51,6 +49,8 @@ window.onload = function(){
         }
       }
     });
+
+    if(location.href.indexOf("delay") === -1) document.getElementById("delay").value = 0;
 
     performAction();
   }
