@@ -3,19 +3,21 @@
 "use strict";
 
 function performAction(caller){
-  let startDate = document.getElementById("start").value, episodeCount = document.getElementById("count").value, delayCount = document.getElementById("delay").value, remaining;
+  let startDate = new Date(document.getElementById("start").value), episodeCount = parseInt(document.getElementById("count").value), delayCount = parseInt(document.getElementById("delay").value), remaining;
 
   if(delayCount !== "1") document.getElementById("pluralizer").innerText = "s";
   else document.getElementById("pluralizer").innerText = "";
 
-  if(startDate.length > 0 && episodeCount.length > 0 && delayCount.length > 0){
-    startDate = startDate.split("-");
-    startDate = new Date(startDate[0] + ", " + startDate[1] + ", " + startDate[2]);
-    startDate.setDate(startDate.getDate() + (((parseInt(episodeCount) - 1) + parseInt(delayCount)) * 7));
+  if(!isNaN(startDate) && !isNaN(episodeCount) && !isNaN(delayCount)){
+    let difference;
 
-    if((new Date() - startDate) / 86400000 >= 0) remaining = " has ended.";
-    else if(Math.abs(new Date() - startDate) / 604800000 > episodeCount) remaining = episodeCount + " Episodes Remaining";
-    else if(Math.abs(new Date() - startDate) / 604800000 > 1) remaining = Math.ceil(Math.abs(new Date() - startDate) / 604800000) + " Episodes Remaining";
+    startDate.setDate(startDate.getDate() + 1 + (((episodeCount - 1) + delayCount) * 7));
+
+    difference = new Date() - startDate;
+
+    if(difference / 86400000 >= 0) remaining = " has ended.";
+    else if(Math.abs(difference) / 604800000 > episodeCount) remaining = episodeCount + " Episodes Remaining";
+    else if(Math.abs(difference) / 604800000 > 1) remaining = Math.ceil(Math.abs(difference) / 604800000) + " Episodes Remaining";
     else remaining = "1 Episode Remaining";
 
     document.getElementById("output").innerText = (remaining !== " has ended.") ? " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")" : remaining;
