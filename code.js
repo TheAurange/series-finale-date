@@ -22,9 +22,8 @@ function performAction(caller){
 
     document.getElementById("output").innerText = (remaining !== " has ended.") ? " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")" : remaining;
   }
-
-  if(caller === "Location") document.getElementById("input").innerText = "This series ";
-  else if(caller !== undefined) caller.blur();
+  
+  if(caller !== undefined) caller.blur();
 }
 
 window.onload = function(){
@@ -51,6 +50,6 @@ window.onload = function(){
       }
     });
 
-    performAction("Location");
+    performAction();
   }
 };
