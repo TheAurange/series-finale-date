@@ -43,13 +43,13 @@ window.onload = function(){
             if(/^\d{4}-\d{2}-\d{2}$/.test(e[1])){
               let t = e[1].split("-");
 
-              if(t[1] > 0 && t[1] < 13 && t[2] > 0 && t[2] < 31) document.querySelector("#start").value = e[1];
+              if(Number(t[1]) > 0 && Number(t[1]) < 13 && Number(t[2]) > 0 && Number(t[2]) < 32) document.querySelector("#start").value = e[1];
             }
 
             break;
 
           case "count":
-            if(parseInt(e[1]) > 1) document.querySelector("#count").value = e[1];
+            if(Number(e[1]) > 1) document.querySelector("#count").value = e[1];
 
             break;
 
