@@ -3,9 +3,12 @@
 "use strict";
 
 function performAction(caller){
-  let startDate = new Date(document.getElementById("start").value), episodeCount = parseInt(document.getElementById("count").value), delayCount = parseInt(document.getElementById("delay").value), remaining;
+  let startDate = new Date(document.querySelector("#start").value),
+      episodeCount = Number(document.querySelector("#count").value),
+      delayCount = Number(document.querySelector("#delay").value),
+      remaining;
 
-  if(delayCount !== "1") document.getElementById("pluralizer").innerText = "s";
+  if(delayCount !== 1) document.getElementById("pluralizer").innerText = "s";
   else document.getElementById("pluralizer").innerText = "";
 
   if(!isNaN(startDate) && !isNaN(episodeCount) && !isNaN(delayCount)){
@@ -39,12 +42,18 @@ window.onload = function(){
 
               if(t[1] > 0 && t[1] < 13 && t[2] > 0 && t[2] < 31) document.getElementById("start").value = e[1];
             }
+
             break;
+
           case "count":
             if(parseInt(e[1]) > 1) document.getElementById("count").value = e[1];
+
             break;
+
           case "delay":
             if(!isNaN(e[1])) document.getElementById("delay").value = e[1];
+            else document.getElementById("delay").value = 0;
+
             break;
         }
       }
