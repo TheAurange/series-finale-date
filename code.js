@@ -62,7 +62,7 @@ window.onload = function(){
       }
     });
 
-    if(location.href.indexOf("delay") === -1) delay.value = 0;
+    if(document.querySelector("#delay").value.length === 0) delay.value = 0;
 
     performAction();
   }
