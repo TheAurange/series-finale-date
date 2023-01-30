@@ -24,7 +24,7 @@ function performAction(caller){
     else if(Math.abs(difference) / 604800000 > 1) remaining = Math.ceil(Math.abs(difference) / 604800000) + " Episodes Remaining";
     else remaining = "1 Episode Remaining";
 
-    document.getElementById("output").innerText = (remaining !== " has ended.") ? " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")" : remaining;
+    document.querySelector("#output").innerText = (remaining !== " has ended.") ? " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")" : remaining;
   }
   
   if(caller) caller.blur();
