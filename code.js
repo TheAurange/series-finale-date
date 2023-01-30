@@ -27,7 +27,7 @@ function performAction(caller){
     document.getElementById("output").innerText = (remaining !== " has ended.") ? " ends on " + (startDate.getMonth() + 1) + "/" + startDate.getDate() + "/" + startDate.getFullYear() + ". (" + remaining + ")" : remaining;
   }
   
-  if(caller !== undefined) caller.blur();
+  if(caller) caller.blur();
 }
 
 window.onload = function(){
